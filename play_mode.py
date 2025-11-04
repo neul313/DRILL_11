@@ -44,10 +44,9 @@ def init():
     game_world.add_objects(zombies, 1)
 
     #소년과 좀비 사이에 충돌검사가 필요하다는 정보를 추가
-    game_world.add_collision_pair('Zombie:boy', Zombie, None)
-    for ball in balls:
-        game_world.add_collision_pair('Zombie:boy', None, boy)
-
+    game_world.add_collision_pair('Zombie:boy', None, boy)
+    for zombie in zombies:
+        game_world.add_collision_pair('Zombie:boy', zombie, None)
 
 
 def update():

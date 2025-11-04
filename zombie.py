@@ -69,7 +69,11 @@ class Zombie:
             exit(0)
         elif group == 'Zombie:ball':
             if other.stopped == False:
-                self.size =100
+                if self.size == 200:
+                    self.size = 100
+
+                elif self.size == 100:
+                    game_world.remove_object(self)
 
 
 

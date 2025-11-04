@@ -46,10 +46,6 @@ FRAMES_PER_ACTION = 8
 
 
 
-
-
-
-
 class Idle:
 
     def __init__(self, boy):
@@ -154,7 +150,6 @@ class Boy:
         )
 
 
-
     def update(self):
         self.state_machine.update()
 
@@ -182,3 +177,7 @@ class Boy:
     def handle_collision(self, group, other):
         if group == 'boy:ball':
             self.ball_count += 1
+
+        if group == 'Zombie:boy':
+            print('over')
+            exit(0)

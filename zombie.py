@@ -19,6 +19,8 @@ FRAMES_PER_ACTION = 10.0
 
 animation_names = ['Walk']
 
+size = 200
+
 class Zombie:
     images = None
 
@@ -53,7 +55,7 @@ class Zombie:
         if self.dir < 0:
             Zombie.images['Walk'][int(self.frame)].composite_draw(0, 'h', self.x, self.y, 200, 200)
         else:
-            Zombie.images['Walk'][int(self.frame)].draw(self.x, self.y, 200, 200)
+            Zombie.images['Walk'][int(self.frame)].draw(self.x, self.y, size, size)
         draw_rectangle(*self.get_bb())
 
     def handle_event(self, event):

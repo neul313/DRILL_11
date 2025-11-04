@@ -48,6 +48,12 @@ def init():
     for zombie in zombies:
         game_world.add_collision_pair('Zombie:boy', zombie, None)
 
+    #좀비와 볼 사이의 충돌검사
+    for zombie in zombies:
+        game_world.add_collision_pair('Zombie:ball', zombie, None)
+    for ball in balls:
+        game_world.add_collision_pair('Zombie:ball', None, ball)
+
 
 def update():
     game_world.update()

@@ -72,7 +72,6 @@ class Idle:
         else: # face_dir == -1: # left
             self.boy.image.clip_draw(int(self.boy.frame) * 100, 200, 100, 100, self.boy.x, self.boy.y)
 
-
 class Sleep:
 
     def __init__(self, boy):
@@ -96,8 +95,6 @@ class Sleep:
             self.boy.image.clip_composite_draw(int(self.boy.frame) * 100, 300, 100, 100, 3.141592/2, '', self.boy.x - 25, self.boy.y - 25, 100, 100)
         else:
             self.boy.image.clip_composite_draw(int(self.boy.frame) * 100, 200, 100, 100, -3.141592/2, '', self.boy.x + 25, self.boy.y - 25, 100, 100)
-
-
 
 class Run:
     def __init__(self, boy):
@@ -169,6 +166,7 @@ class Boy:
             game_world.add_object(ball, 1)
             game_world.add_collision_pair('grass:ball', None, ball)
             game_world.add_collision_pair('boy:ball', None, ball)
+            game_world.add_collision_pair('Zombie:ball', None, ball)
 
     def get_bb(self):
         #상태에 따라 다르려면 스테이트머신에게 넘긴다.
